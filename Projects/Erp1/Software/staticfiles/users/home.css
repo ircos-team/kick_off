@@ -1,0 +1,23 @@
+.all_container {
+    height: fit-content;
+    width: 100vw;
+    display: inline-block;
+
+}
+.welcom_c{
+    height: fit-content;
+    width: 100vw;
+    background-color: lightblue;
+    font-size: 4rem;
+    color: white;
+    padding: 3vh;
+}
+.info_c{
+    height: fit-content;
+    width: 100vw;
+    background-color: lightsalmon;
+    font-size: 4rem;
+    color: white;
+    margin-top: 5vh;
+    padding: 3vh;
+}
