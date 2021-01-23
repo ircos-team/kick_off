@@ -5,11 +5,12 @@
 def function (lot_quantity, nqa, type):
       object_de_comunication = {
             'type': 'double',
-            'nsample': [50,50],
-            'alimit': [0,3],
-            'rlimit':[3,4],
-            'frisk':1.23,
-            'crisk':6.52,
+            'nsample': [],
+            'alimit': [],
+            'rlimit':[],
+            'frisk':0,
+            'crisk':0,
+            'possible_nqa':[],
             'advice': 'not implemented yet'      
               }
       ns1 = 100
