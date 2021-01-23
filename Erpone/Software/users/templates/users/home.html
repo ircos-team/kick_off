@@ -11,49 +11,53 @@
 </head>
 <body>
     <div class="all_container">
-        <!-- Popup -->
-        <!-- Trigger/Open The Modal -->
-    	<button id="myBtn">Open Modal</button>
 
-        <!-- The Modal -->
+    
+
         <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
+
+            <div class="modal-content" id = "modal_content">
                 <span class="close">&times;</span>
-                <p>Some text in the Modal..</p>
+                
             </div>
 
         </div>
 
         <div class="welcom_c">
-           <form action="http://localhost:8000" method="POST">
+
+           <form action="http://localhost:8000" method="POST" onsubmit="return is_form_valid()">
             {% csrf_token %}
 
-            <h2>Enter QC settings</h2>
-            <div style="display: flex; align-items: center;">
-                <p>Lot size</p>  
-                <input type="number" name="Lot" id="Lot" onchange="set_mqa()">
-            </div>
-            <div style="display: flex; align-items: center;">
-                <p>Type of control</p>  
-                <select name="type" id="type">
-                    <option value="simple">Simple control</option> 
-                    <option value="double">Double control</option> 
-                </select>
-            </div>
-            <div style="display: flex;  align-items: center;">
-                <p>Acceptable quality level</p>  
-                <select type="number" name="aqualityl" id="aqualityl"> 
-                    <option value="simple">10%</option> 
-                    <option value="double">5%</option> 
+                <h2>Enter QC settings</h2>
 
-                </select>
-            </div>
-            <button>Information</button>
-            <button>Start calculation</button>
+                <div style="display: flex; align-items: center;">
+                    <p>Lot size</p>  
+                    <input type="number" name="Lot" id="Lot" onchange="set_mqa()">
+                </div>
+
+                <div style="display: flex; align-items: center;">
+                    <p>Type of control</p>  
+                    <select name="type" id="type">
+                        <option value="simple">Simple control</option> 
+                        <option value="double">Double control</option> 
+                    </select>
+
+                </div>
+
+                <div style="display: flex;  align-items: center;">
+                    <p>Acceptable quality level %</p>  
+                    <select type="number" name="aqualityl" id="aqualityl"> 
+                        <option value="simple">10%</option> 
+                        <option value="double">5%</option> 
+                    </select>
+                </div>
+            
+            <button >Start calculation</button>
 
            </form>
+           <button>Information</button>
+
         </div>
 
 

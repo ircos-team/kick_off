@@ -45,8 +45,8 @@ class MyView(View):
         return self.mckresult
         
     def get(self, request):
-        results = self._get_mock_data()
-        return render(request,'users/home.html',context={"results": results})
+        results = ''
+        return render(request,'users/home.html')
     
     def post(self, request):
         results = self._get_mock_data()
