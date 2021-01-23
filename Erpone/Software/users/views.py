@@ -45,3 +45,4 @@ class MyView(View):
         context = self._get_mock_data()
         return render(request,'users/home.html',context)
        
+

@@ -2,9 +2,31 @@
 
 """Les NQA autorisés par rapport à la taille du lot"""
 
+def function (lot_quantity, nqa, type):
+      object_de_comunication = {
+            'type': 'double',
+            'nsample': [50,50],
+            'alimit': [0,3],
+            'rlimit':[3,4],
+            'frisk':1.23,
+            'crisk':6.52,
+            'advice': 'not implemented yet'      
+              }
+      ns1 = 100
+      object_de_comunication['nsample'].append(ns1)
+      ns2 = 500
+      object_de_comunication['nsample'].append(ns2)
+
+      # object_de_comunication['nsample'] = [ns1,ns2]
+
+      
+
+      
+      return object_de_comunication
+
 
 if N<2:
-  print("Le lot doit avoir un nombre de pièces supérieur à 2")
+      print("Le lot doit avoir un nombre de pièces supérieur à 2")
 elif 2=<N=<8:
   NQA = [6.5]
 elif 9=<N=<15:
