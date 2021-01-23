@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
+import logging
 
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -42,6 +44,11 @@ class MyView(View):
         return self.mckresult
         
     def get(self, request):
-        context = self._get_mock_data()
-        return render(request,'users/home.html',context)
+        results = self._get_mock_data()
+        return render(request,'users/home.html',context={"results": results})
+    
+    def post(self, request):
+        results = self._get_mock_data()
+        print(results)
+        return render(request,'users/home.html',results)
        
