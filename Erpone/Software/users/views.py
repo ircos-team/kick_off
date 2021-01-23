@@ -37,6 +37,7 @@ class MyView(View):
             'rlimit':[3,4],
             'frisk':1.23,
             'crisk':6.52,
+            'possible_nqa':[],
             'advice': 'not implemented yet'      
               }
         return self.mckresult
