@@ -1,3 +1,6 @@
+//get data from django, check the html side as well to see how you pass data
+const django_data = JSON.parse(document.getElementById('results').textContent);
+console.log(django_data);
 // Get the modal
 var modal = document.getElementById("myModal");
 
