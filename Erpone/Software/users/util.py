@@ -2,7 +2,7 @@
 
 """Les NQA autorisés par rapport à la taille du lot"""
 
-def function(lot_quantity, nqa, type_t):       #(Nombre de pièces dans le lot, niveau de qualité accéptable, type de contrôle) 
+def reception_control(lot_quantity, nqa, type_t):       #(Nombre de pièces dans le lot, niveau de qualité accéptable, type de contrôle) 
 
   # IF principal numéro 1 : servant à traiter le type de contrôle à faire (Simple ou Double) ici Simple
   if type_t=="simple":
