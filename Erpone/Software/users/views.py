@@ -39,6 +39,7 @@ class MyView(View):
             'rlimit':[3,4],
             'frisk':1.23,
             'crisk':6.52,
+            'possible_nqa':[],
             'advice': 'not implemented yet'      
               }
         return self.mckresult
@@ -50,5 +51,5 @@ class MyView(View):
     def post(self, request):
         results = self._get_mock_data()
         print(results)
-        return render(request,'users/home.html',results)
+        return render(request,'users/home.html',context={"results": results})
        
