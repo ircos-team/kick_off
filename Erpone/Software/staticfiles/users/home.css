@@ -12,6 +12,27 @@
     color: white;
     padding: 3vh;
 }
+.welcom_c p  {
+   font-size: 1.25rem;
+   width: 15vw;
+}
+.welcom_c h2  {
+    font-size: 2.25rem;
+    padding: 0;
+    margin: 0 0 4vh 0;
+    border-bottom: solid;
+    width: fit-content;
+ }
+
+ .welcom_c input  {
+    width: 15vw;
+    height: 5vh;
+ }
+ .welcom_c select {
+    width: 15.5vw;
+    height: 5.5vh;
+ }
+
 .info_c{
     height: fit-content;
     width: 100vw;
