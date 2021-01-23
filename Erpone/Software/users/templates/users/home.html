@@ -5,17 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'users/home.css' %}">
+    
     <title>Document</title>
 </head>
 <body>
     <div class="all_container">
-        
+        <!-- Popup -->
+        <!-- Trigger/Open The Modal -->
+    	<button id="myBtn">Open Modal</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
 
         <div class="welcom_c">
+           <form action="http://localhost:8000" method="POST">
+            {% csrf_token %}
+
             <h2>Enter QC settings</h2>
             <div style="display: flex; align-items: center;">
                 <p>Lot size</p>  
-                <input type="number">
+                <input type="number" name="Lot" id="say" >
             </div>
             <div style="display: flex; align-items: center;">
                 <p>Type of control</p>  
@@ -26,10 +43,12 @@
             </div>
             <div style="display: flex;  align-items: center;">
                 <p>Acceptable quality level</p>  
-                <input type="number">
+                <input type="number" name="aqualityl" id="aqualityl">
             </div>
             <button>Information</button>
             <button>Start calculation</button>
+
+           </form>
         </div>
 
 
@@ -37,6 +56,6 @@
 
 
     </div>
-    
+    <script src="{% static 'users/home.js' %}"></script>
 </body>
 </html>

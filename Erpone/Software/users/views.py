@@ -9,6 +9,6 @@ def index(request):
 
 
 def home(request):
-    print("search called")
+    print(request.POST)
  
     return render(request,'users/home.html')
