@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 import logging
+from .util import reception_control
 
 logger = logging.getLogger(__name__)
 
@@ -49,7 +50,9 @@ class MyView(View):
         return render(request,'users/home.html')
     
     def post(self, request):
-        results = self._get_mock_data()
+        print(request.POST)
+        print(float(request.POST['aqualityl']))
+        results = reception_control(float(request.POST['Lot']),float(request.POST['aqualityl']),request.POST['type'])
         print(results)
         return render(request,'users/home.html',context={"results": results})
        

@@ -20,21 +20,43 @@ class Result {
     //div for sample number 
     this.sample_number_Div = document.createElement("div");
     this.sample_n = document.createElement("p");
-    this.sample_n.innerText = "Sample number = " + data['nsample'][0] + ' and ' + data['nsample'] [1]
+    if(data['type'] == 'double'){
+      this.sample_n.innerText = "Sample number = " + data['nsample'][0] + ' and ' + data['nsample'] [1]
+
+    }
+    else {
+      this.sample_n.innerText = "Sample number = " + data['nsample']
+    }
+    
     this.sample_number_Div.appendChild(this.sample_n);
     modal_content.appendChild(this.sample_number_Div);
 
     //div for alimit 
     this.alimit_Div = document.createElement("div");
     this.alimit_p = document.createElement("p");
-    this.alimit_p.innerText = "Acceptation limit = " + data['alimit'][0] + ' and ' + data['alimit'] [1]
+    if(data['type'] == 'double'){
+      this.alimit_p.innerText = "Acceptation limit = " + data['alimit'][0] + ' and ' + data['alimit'] [1];
+
+    }
+    else {
+      this.alimit_p.innerText = "Acceptation limit = " + data['alimit'];
+    }
+    
     this.sample_number_Div.appendChild(this.alimit_p);
     modal_content.appendChild(this.alimit_Div);
 
     //div for rlimit 
     this.rlimit_Div = document.createElement("div");
     this.rlimit_p = document.createElement("p");
-    this.rlimit_p.innerText = "Risk limit = " + data['rlimit'][0] + ' and ' + data['rlimit'] [1]
+    
+    if(data['type'] == 'double'){
+      this.rlimit_p.innerText = "Risk limit = " + data['rlimit'][0] + ' and ' + data['rlimit'] [1];
+
+    }
+    else {
+      this.rlimit_p.innerText = "Risk limit = " + data['rlimit']
+    }
+    
     this.rlimit_Div.appendChild(this.rlimit_p);
     modal_content.appendChild(this.rlimit_Div);
 
@@ -170,8 +192,11 @@ function set_mqa() {
   to_append = get_mqa_list(t);
   
   to_append.forEach(function(element,key) {
+    var opt = document.createElement('option');
+    opt.text = element + '%';
+    opt.value = element 
 
-    mqa_select[key] = new Option(element,key);
+    mqa_select.appendChild(opt);
 });
   
   console.log(mqa_select);
@@ -179,7 +204,11 @@ function set_mqa() {
 }
 
 function is_form_valid() {
+  
+
  var lot = document.getElementById('Lot');
+ var mqa_select = document.getElementById('aqualityl');
+ console.log(mqa_select.value)
 if (lot.value <= 0 )
 {
   set_modal_text('Lot quantity is not correct');
