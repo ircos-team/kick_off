@@ -249,7 +249,7 @@ def reception_control(lot_quantity, nqa, type_t):       #(Nombre de pièces dans
         object_de_comunication['advice'] = 'not implemented yet'
       else:
         return print("Error, NQA must be equal to [10,6.5,4,2.5,1.5,1,0.25] for this case ")
-  #------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------
     elif 501<=lot_quantity<=1200:
       object_de_comunication['type'] = 'simple'
       object_de_comunication['nsample'] =80
@@ -671,8 +671,7 @@ def reception_control(lot_quantity, nqa, type_t):       #(Nombre de pièces dans
       else:
         return print("Error, NQA must be equal to [1,0.65,0.4,0.25,0.15,0.1,0.065,0.04,0.01] for this case ")
   #Fin if------------------------------------------------------------------------------------      
-    return object_de_comunication
-    #Fin if------------------------------------------------------------------------------------
+    
   
   # IF principal numéro 2 : servant à traiter le type de contrôle à faire (Simple ou Double) ici Double
   elif type_t=="double":
